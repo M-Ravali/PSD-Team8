@@ -671,7 +671,7 @@ strong {
 .about-image {
   border-radius: var(--border-radius-medium);
   display: block;
-  width: 350px;
+  width: 2000px;
   height: 400px;
   object-fit: cover;
 }
@@ -1263,6 +1263,93 @@ blockquote::before {
   margin-bottom: 0;
 }
 
+/*....................................
+CAMPAIGN FORM
+/*....................................
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Styling */
+.custom-text-block {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.custom-text-block h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Form Styling */
+form {
+  width: 100%;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .col-lg-5,
+  .col-md-7,
+  .col-12 {
+      width: 100%;
+      padding: 0 15px;
+  }
+}
 
 /*---------------------------------------
   SITE FOOTER              

@@ -304,34 +304,41 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-md-5 col-12">
-                            <img src="images/portrait-volunteer-who-organized-donations-charity.jpg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+                            <img src="images/getty_185462049_970646970450095_47050.jpg"class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="" width="5052" length="1052">
+                            
                         </div>
 
                         <div class="col-lg-5 col-md-7 col-12">
                             <div class="custom-text-block">
-                                <h2 class="mb-0">Sandy Chan</h2>
-
-                                <p class="text-muted mb-lg-4 mb-md-4">Co-Founding Partner</p>
-
-                                <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional charity theme based</p>
-
-                                <p>You are not allowed to redistribute this template ZIP file on any other template collection website. Please contact for more information.</p>
-
-                                <ul class="social-icon mt-4">
-                                    <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-twitter"></a>
-                                    </li>
-
-                                    <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-facebook"></a>
-                                    </li>
-
-                                    <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-instagram"></a>
-                                    </li>
-                                </ul>
+                                <h2 class="mb-4">Create a Campaign</h2>
+                                <form action="submit_campaign.php" method="post">
+                                    <div class="form-group">
+                                        <label for="campaignTitle">Campaign Title</label>
+                                        <input type="text" class="form-control" id="campaignTitle" name="campaignTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="campaignDescription">Campaign Description</label>
+                                        <textarea class="form-control" id="campaignDescription" name="campaignDescription" rows="4" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="goalAmount">Goal Amount</label>
+                                        <input type="number" class="form-control" id="goalAmount" name="goalAmount" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="endDate">End Date</label>
+                                        <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactEmail">Contact Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-3">Submit Campaign</button>
+                                </form>
                             </div>
                         </div>
+                        
+
+                        
 
                     </div>
                 </div>
