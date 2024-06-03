@@ -50,44 +50,26 @@ Our mission is to empower individuals, non-profits, and small businesses by prov
 
 ## Project Structure
 
-├── Backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── .env
-│   ├── index.js
-│   ├── package-lock.json
-│   ├── package.json
-│   └── secretKey.js
-├── GoFundEase/
-│   ├── helper/
-│   ├── index.html
-│   ├── login.html
-│   ├── main.js
-│   ├── register.html
-│   ├── style.css
-│   └── README.md
+![image](https://github.com/M-Ravali/PSD-Team8/assets/157147111/78d8179b-8282-498a-b6db-4eeee63c2929)
 
-Backend/ - Server-side code
- config - Configuration files
- controllers - Request handlers
- middlewares - Custom middleware functions
- models - Database schemas
- routes - API endpoints
- .env - Environment variables
- index.js - Server entry point
- package*.json - Project dependencies
- secretKey.js - Secret keys (should be in `.env` and gitignored)
+Backend/ - Server-side code,
+ config - Configuration files,
+ controllers - Request handlers,
+ middlewares - Custom middleware functions,
+ models - Database schemas,
+ routes - API endpoints,
+ .env - Environment variables,
+ index.js - Server entry point,
+ package*.json - Project dependencies,
+ secretKey.js - Secret keys (should be in `.env` and gitignored),
 
-GoFundEase/ - Client-side code
- helper/ - Utility functions
-  index.html - Main page
-  login.html - Login page
-  main.js - Main JavaScript file
-  register.html - Registration page
-  style.css - Global styles
+GoFundEase/ - Client-side code,
+ helper/ - Utility functions,
+  index.html - Main page,
+  login.html - Login page,
+  main.js - Main JavaScript file,
+  register.html - Registration page,
+  style.css - Global styles,
 README.md - Project documentation
 
 ## Getting Started
