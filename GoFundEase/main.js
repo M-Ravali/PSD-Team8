@@ -2,16 +2,37 @@ document.addEventListener('DOMContentLoaded', function () {
     // Login form validation
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', function (event) {
+        loginForm.addEventListener('submit', async function (event) {
             event.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
             if (validateEmail(email) && password) {
-                alert('Login successful');
-                // Add login logic here
+                try {
+                    const res = await fetch('http://localhost:5000/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json', // Set content type to JSON
+                        },
+                        body: JSON.stringify({ email, password }), // Send JSON data
+                    });
+
+                    const data = await res.json();
+                    if (res.ok) {
+                        alert('Login successful');
+                        // Handle successful login, e.g., store token, redirect, etc.
+                        console.log('Login successful:', data);
+                        // Example: localStorage.setItem('token', data.token);
+                        // Redirect to another page: window.location.href = '/dashboard';
+                    } else {
+                        alert('Login failed: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                }
             } else {
-                alert('Please enter valid email and password');
+                alert('Please enter a valid email and password');
             }
         });
     }
@@ -19,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Register form validation
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
-        registerForm.addEventListener('submit', function (event) {
+        registerForm.addEventListener('submit', async function (event) {
             event.preventDefault();
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
@@ -27,8 +48,29 @@ document.addEventListener('DOMContentLoaded', function () {
             const confirmPassword = document.getElementById('confirmPassword').value;
 
             if (username && validateEmail(email) && password && password === confirmPassword) {
-                alert('Account created successfully');
-                // Add registration logic here
+                try {
+                    const res = await fetch('http://localhost:5000/api/auth/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json', // Set content type to JSON
+                        },
+                        body: JSON.stringify({ username, email, password }), // Send JSON data
+                    });
+
+                    const data = await res.json();
+                    if (res.ok) {
+                        alert('Account created successfully');
+                        // Handle successful registration, e.g., store token, redirect, etc.
+                        console.log('Registration successful:', data);
+                        // Example: localStorage.setItem('token', data.token);
+                        // Redirect to another page: window.location.href = '/login';
+                    } else {
+                        alert('Registration failed: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                }
             } else {
                 alert('Please enter valid details and ensure passwords match');
             }
