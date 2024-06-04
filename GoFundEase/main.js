@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const data = await res.json();
                     if (res.ok) {
                         alert('Login successful');
+                        redirectToCharityIndex();
                         // Handle successful login, e.g., store token, redirect, etc.
                         console.log('Login successful:', data);
                         // Example: localStorage.setItem('token', data.token);
@@ -42,24 +43,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (registerForm) {
         registerForm.addEventListener('submit', async function (event) {
             event.preventDefault();
-            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
 
-            if (username && validateEmail(email) && password && password === confirmPassword) {
+            if (name && validateEmail(email) && password && password === confirmPassword) {
                 try {
                     const res = await fetch('http://localhost:5000/api/auth/register', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json', // Set content type to JSON
                         },
-                        body: JSON.stringify({ username, email, password }), // Send JSON data
+                        body: JSON.stringify({ name, email, password }), // Send JSON data
                     });
 
                     const data = await res.json();
                     if (res.ok) {
                         alert('Account created successfully');
+                        redirectToCharityIndex();
                         // Handle successful registration, e.g., store token, redirect, etc.
                         console.log('Registration successful:', data);
                         // Example: localStorage.setItem('token', data.token);
@@ -82,4 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function validateEmail(email) {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return re.test(String(email).toLowerCase());
+}
+
+// redirecting
+function redirectToCharityIndex() {
+    window.location.href = 'helper/charity/index.html';
 }
