@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const stripeRoutes = require('./routes/stripe');
 const cors = require('cors');
 
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/stripe', stripeRoutes);
 
 const PORT = process.env.PORT || 5000;
 
